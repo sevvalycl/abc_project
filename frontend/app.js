@@ -6,12 +6,12 @@ const graphImg = document.getElementById('graph');
 const downloadCsv = document.getElementById('downloadCsv');
 const downloadGraph = document.getElementById('downloadGraph');
 
-// Fonksiyon seçiminde custom kutusu aç/kapat
+// fonksiyon seçiminde custom kutusu aç kapat
 funcSelect.addEventListener('change', () => {
     customFunc.style.display = (funcSelect.value === 'custom') ? 'inline-block' : 'none';
 });
 
-// Çalıştır butonu
+// çalıştır butonu
 runBtn.addEventListener('click', async () => {
     const payload = {
         funcName: funcSelect.value,
@@ -22,7 +22,7 @@ runBtn.addEventListener('click', async () => {
         customExpr: customFunc.value
     };
 
-    // Çalıştırmadan önce tüm görselleri ve linkleri gizle
+    // çalıştırmadan önce tüm görselleri ve linkleri gizle
     graphImg.style.display = 'none';
     downloadGraph.style.display = 'none';
     downloadCsv.style.display = 'none';
@@ -41,7 +41,7 @@ runBtn.addEventListener('click', async () => {
         } else {
             resultPre.textContent = `En iyi çözüm: ${data.best_sol}\nEn iyi fitness: ${data.best_fit}`;
 
-            // Grafik göster ve indirilebilir yap
+            // grafik göster ve indirilebilir yap
             graphImg.src = data.graph_file || '/files/abc_graph.png';
             graphImg.style.display = 'block';
             downloadGraph.href = data.graph_file || '/files/abc_graph.png';

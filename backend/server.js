@@ -8,10 +8,10 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Python çıktısı ve dosyaları için statik klasör
+// python çıktısı ve dosyaları için statik klasör
 app.use('/files', express.static(path.join(__dirname, 'python/files')));
 
-// Frontend dosyaları için statik klasör
+// frontend dosyaları için statik klasör
 app.use('/', express.static(path.join(__dirname, '../frontend')));
 
 app.use('/api/abc', abcRoute);

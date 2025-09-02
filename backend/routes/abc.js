@@ -26,14 +26,13 @@ router.post('/', (req, res) => {
 
     py.on('close', code => {
         if (errData) {
-            console.error('Python Hatası:\n', errData); // terminalde görünür
+            console.error('Python Hatası:\n', errData); // terminalde göster
             res.status(500).json({ error: errData });
         } else {
             try {
                 const result = JSON.parse(data);
-                console.log('Python çıktısı:', result); // terminalde JSON görünür
+                console.log('Python çıktısı:', result); // terminalde JSON göster
 
-                // Grafik ve CSV dosyalarının frontend tarafından erişilebilir yolu
                 result.graph_file = `/files/${result.graph_file}`;
                 result.csv_file = `/files/${result.csv_file}`;
 
