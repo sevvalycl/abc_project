@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Algoritması</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input, select, button { margin: 5px; padding: 5px; }
+        img { max-width: 600px; display: none; margin-top: 10px; } /* Başta gizli */
+        a { display: none; margin-top: 10px; margin-right: 10px; } /* Başta gizli */
+    </style>
+</head>
+<body>
+    <h1>Artificial Bee Colony (ABC) Algoritması</h1>
+
+    <label>Fonksiyon Seç:</label>
+<select id="funcSelect">
+    <option value="sphere">Sphere</option>
+    <option value="rosenbrock">Rosenbrock</option>
+    <option value="rastrigin">Rastrigin</option>
+    <option value="ackley">Ackley</option>
+    <option value="griewank">Griewank</option>
+    <option value="beale">Beale (2D)</option>
+    <option value="booth">Booth (2D)</option>
+    <option value="custom">Kendi Fonksiyonum</option>
+</select>
+<input type="text" id="customFunc" placeholder="Örn: math.sin(x[0])+x[1]**2" style="display:none; width: 300px;">
+
+    <div>
+        <label>Dim:</label> <input type="number" id="dim" value="2">
+        <label>Max Iter:</label> <input type="number" id="maxIter" value="50">
+        <label>Food Number:</label> <input type="number" id="foodNumber" value="20">
+        <label>Limit:</label> <input type="number" id="limit" value="10">
+    </div>
+
+    <button id="runBtn">Çalıştır</button>
+
+    <h2>Sonuç</h2>
+    <pre id="result"></pre>
+    <img id="graph" alt="Grafik">
+
+    <!-- İndirme linkleri -->
+    <a id="downloadGraph" href="#" download="abc_graph.png">Grafiği İndir</a>
+    <a id="downloadCsv" href="#" download="abc_results.csv">CSV İndir</a>
+
+    <script src="app.js"></script>
+</body>
+</html>
